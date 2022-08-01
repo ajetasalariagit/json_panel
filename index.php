@@ -11,7 +11,6 @@ if ($page <= 1 && is_integer($page)) {
 } else {
     $page1 = ($page * 5) - 5;
 }
-//echo"<pre>"; print_r($page); die;
 $options = [
     'limit' => 5,
     'skip' => $page1,

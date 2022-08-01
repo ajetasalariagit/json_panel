@@ -197,37 +197,3 @@ if (isset($_POST['update_people'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"> </script>
 </body>
-
-
-<!-- function setRoundScores($roundId, $scoresArray) {
-    	
-        $client = new MongoDB\Client($_ENV['MDB_CLIENT']);
-    
-        $collection = $client->golf->round;
-    
-        $match = [ '_id' => new MongoDB\BSON\ObjectID( $roundId ) ];
-            
-        $set = [
-            '$set' => [
-                'holes' => [
-                    '$map' => [
-                        'input' => [
-                            '$range' => [ 0, [ '$size' => '$holes']]
-                        ],
-                        'in' => [
-                            '$mergeObjects' => [
-                                [ '$arrayElemAt' => [ '$holes', '$$this' ]],
-                                [ 'holeGross' => [ '$toInt' => [ '$arrayElemAt' => [ $scoresArray, '$$this' ]]]]
-                            ]
-                        ]
-                            
-                    ]
-                ]
-            ]
-        ];
-            
-        $updateOne = $collection->updateOne($match, [$set]);
-            
-        return $updateOne->getModifiedCount();
-            
-    } -->

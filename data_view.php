@@ -5,28 +5,6 @@ require_once('config.php');
 if (isset($_GET['id'])) {
     $user = $collection->findOne(['_id' => new MongoDB\BSON\ObjectID($_GET['id'])]);
     $id = $user->_id;
-    $company_name = $user->company_name;
-    $company_type = $user->company_type;
-    $company_incorp_date = $user->company_incorp_date;
-    $company_paid_capital = $user->company_paid_capital;
-    $company_cin = $user->company_cin;
-    $company_roc = $user->company_roc;
-    $company_registration_number = $user->company_registration_number;
-    $company_auth_capital = $user->company_auth_capital;
-    $company_address = $user->company_address;
-    $company_city = $user->company_city;
-    $company_state = $user->company_state;
-    $company_pin = $user->company_pin;
-    $company_email = $user->company_email;
-    $company_website = $user->company_website;
-    $company_pan = $user->company_pan;
-    $company_tan = $user->company_tan;
-    $company_tin = $user->company_tin;
-    $company_service_tax = $user->company_service_tax;
-    $company_industry_division = $user->company_industry_division;
-    $company_industry_group = $user->company_industry_group;
-    $company_industry_class = $user->company_industry_class;
-    $company_industry_subclass = $user->company_industry_subclass;
     $linkedin_url = $user->linkedin_url ?? "";
     $fb_url = $user->fb_url ?? "";
     $youtube_url = $user->youtube_url ?? "";
@@ -124,95 +102,95 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <input type="hidden" name="id" value="<?php echo $id ?? $_POST['id']; ?>">
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_name">Company Name</label>
-                                    <input type="text" class="form-control" id="company_name" name="company_name" value="<?php echo $company_name ?? $_POST['company_name']; ?>" >
+                                    <input type="text" class="form-control" id="company_name" name="company_name" value="<?php echo $user->company_name ?? $_POST['company_name']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="industry">Industry</label>
-                                    <input type="text" class="form-control" id="industry" name="industry" value="<?php echo $company_name ?? $_POST['company_name']; ?>" >
+                                    <input type="text" class="form-control" id="industry" name="industry" value="<?php echo $user->company_name ?? $_POST['company_name']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_type">Comapny Type</label>
-                                    <input type="text" class="form-control" id="company_type" name="company_type" value="<?php echo $company_type ?? $_POST['company_type']; ?>">
+                                    <input type="text" class="form-control" id="company_type" name="company_type" value="<?php echo $user->company_type ?? $_POST['company_type']; ?>">
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_incorp_date">Company Date</label>
-                                    <input type="text" class="form-control" id="company_incorp_date" name="company_incorp_date" value="<?php echo $company_incorp_date ?? $_POST['company_incorp_date']; ?>" >
+                                    <input type="text" class="form-control" id="company_incorp_date" name="company_incorp_date" value="<?php echo $user->company_incorp_date ?? $_POST['company_incorp_date']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_paid_capital">Paid</label>
-                                    <input type="text" class="form-control" id="company_paid_capital" name="company_paid_capital" value="<?php echo $company_paid_capital ?? $_POST['company_paid_capital']; ?>" >
+                                    <input type="text" class="form-control" id="company_paid_capital" name="company_paid_capital" value="<?php echo $user->company_paid_capital ?? $_POST['company_paid_capital']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_cin">Company Cin</label>
-                                    <input type="text" class="form-control" id="company_cin" name="company_cin" value="<?php echo $company_cin ?? $_POST['company_cin']; ?>" >
+                                    <input type="text" class="form-control" id="company_cin" name="company_cin" value="<?php echo $user->company_cin ?? $_POST['company_cin']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_roc">Company Roc</label>
-                                    <input type="text" class="form-control" id="company_roc" name="company_roc" value="<?php echo $company_roc ?? $_POST['company_roc']; ?>" >
+                                    <input type="text" class="form-control" id="company_roc" name="company_roc" value="<?php echo $user->company_roc ?? $_POST['company_roc']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_registration_number">Company Registration Number</label>
-                                    <input type="text" class="form-control" id="company_registration_number" name="company_registration_number" value="<?php echo $company_registration_number ?? $_POST['company_registration_number']; ?>" >
+                                    <input type="text" class="form-control" id="company_registration_number" name="company_registration_number" value="<?php echo $user->company_registration_number ?? $_POST['company_registration_number']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_auth_capital">Company Auth Capital</label>
-                                    <input type="text" class="form-control" id="company_auth_capital" name="company_auth_capital" value="<?php echo $company_auth_capital ?? $_POST['company_auth_capital']; ?>" >
+                                    <input type="text" class="form-control" id="company_auth_capital" name="company_auth_capital" value="<?php echo $user->company_auth_capital ?? $_POST['company_auth_capital']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_address">Company Address</label>
-                                    <input type="text" class="form-control" id="company_address" name="company_address" value="<?php echo $company_address ?? $_POST['company_address']; ?>" >
+                                    <input type="text" class="form-control" id="company_address" name="company_address" value="<?php echo $user->company_address ?? $_POST['company_address']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_city">Company City</label>
-                                    <input type="text" class="form-control" id="company_city" name="company_city" value="<?php echo $company_city ?? $_POST['company_city']; ?>" >
+                                    <input type="text" class="form-control" id="company_city" name="company_city" value="<?php echo $user->company_city ?? $_POST['company_city']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_state">Company State</label>
-                                    <input type="text" class="form-control" id="company_state" name="company_state" value="<?php echo $company_state ?? $_POST['company_state']; ?>" >
+                                    <input type="text" class="form-control" id="company_state" name="company_state" value="<?php echo $user->company_state ?? $_POST['company_state']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_pin">Company Pin</label>
-                                    <input type="text" class="form-control" id="company_pin" name="company_pin" value="<?php echo $company_pin ?? $_POST['company_pin']; ?>" >
+                                    <input type="text" class="form-control" id="company_pin" name="company_pin" value="<?php echo $user->company_pin ?? $_POST['company_pin']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_email">Company Email</label>
-                                    <input type="text" class="form-control" id="company_email" name="company_email" value="<?php echo $company_email ?? $_POST['company_email']; ?>" >
+                                    <input type="text" class="form-control" id="company_email" name="company_email" value="<?php echo $user->company_email ?? $_POST['company_email']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_website">Company Website</label>
-                                    <input type="text" class="form-control" id="company_website" name="company_website" value="<?php echo $company_website ?? $_POST['company_website']; ?>" >
+                                    <input type="text" class="form-control" id="company_website" name="company_website" value="<?php echo $user->company_website ?? $_POST['company_website']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="companycompany_pan_paid_capital">Company Pan</label>
-                                    <input type="text" class="form-control" id="company_pan" name="company_pan" value="<?php echo $company_pan ?? $_POST['company_pan']; ?>" >
+                                    <input type="text" class="form-control" id="company_pan" name="company_pan" value="<?php echo $user->company_pan ?? $_POST['company_pan']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_tan">Company Tan</label>
-                                    <input type="text" class="form-control" id="company_tan" name="company_tan" value="<?php echo $company_tan ?? $_POST['company_tan']; ?>" >
+                                    <input type="text" class="form-control" id="company_tan" name="company_tan" value="<?php echo  $user->company_tan ?? $_POST['company_tan']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_tin">Company Tin</label>
-                                    <input type="text" class="form-control" id="company_tin" name="company_tin" value="<?php echo $company_tin ?? $_POST['company_tin']; ?>" >
+                                    <input type="text" class="form-control" id="company_tin" name="company_tin" value="<?php echo $user->company_tin ?? $_POST['company_tin']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_service_tax">Company service tax</label>
-                                    <input type="text" class="form-control" id="company_service_tax" name="company_service_tax" value="<?php echo $company_service_tax ?? $_POST['company_service_tax']; ?>" >
+                                    <input type="text" class="form-control" id="company_service_tax" name="company_service_tax" value="<?php echo $user->company_service_tax ?? $_POST['company_service_tax']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_industry_division">Company industry division</label>
-                                    <input type="text" class="form-control" id="company_industry_division" name="company_industry_division" value="<?php echo $company_industry_division ?? $_POST['company_industry_division']; ?>" >
+                                    <input type="text" class="form-control" id="company_industry_division" name="company_industry_division" value="<?php echo $user->company_industry_division ?? $_POST['company_industry_division']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_industry_group">Company industry group</label>
-                                    <input type="text" class="form-control" id="company_industry_group" name="company_industry_group" value="<?php echo $company_industry_group ?? $_POST['company_industry_group']; ?>" >
+                                    <input type="text" class="form-control" id="company_industry_group" name="company_industry_group" value="<?php echo $user->company_industry_group ?? $_POST['company_industry_group']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_industry_class">Company industry class</label>
-                                    <input type="text" class="form-control" id="company_industry_class" name="company_industry_class" value="<?php echo $company_industry_class ?? $_POST['company_industry_class']; ?>" >
+                                    <input type="text" class="form-control" id="company_industry_class" name="company_industry_class" value="<?php echo $user->company_industry_class ?? $_POST['company_industry_class']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="company_industry_subclass">Company Industry subclass</label>
-                                    <input type="text" class="form-control" id="company_industry_class" name="company_industry_subclass" value="<?php echo $company_industry_subclass ?? $_POST['company_industry_subclass']; ?>" >
+                                    <input type="text" class="form-control" id="company_industry_class" name="company_industry_subclass" value="<?php echo $user->company_industry_subclass ?? $_POST['company_industry_subclass']; ?>" >
                                 </div>
                                 <div class="form-group mb-3 mt-3">
                                     <label for="linkedin_url">LinkedIn url</label>
