@@ -1,6 +1,7 @@
 <?php require_once("header.php"); ?>
 <?php
 session_start();
+
 require_once('config.php');
 
 
@@ -147,7 +148,7 @@ $check = $collection->find([], $options);
                 <!-- sales report area start -->
                 <div class="sales-report-area mt-5 mb-5">
                     <div class="row">
-                        <!-- <button type="button" class="btn btn-dark mb-" style="margin-left: 90%;margin-bottom:20px;" data-toggle="modal" data-target="#add_modal">Add List</button> -->
+                        <button type="button" class="btn btn-dark mb-" style="margin-left: 90%;margin-bottom:20px;" data-toggle="modal" data-target="#add_modal">Add List</button>
                     </div>
                 </div>
                 <div class="modal fade" id="add_modal">
